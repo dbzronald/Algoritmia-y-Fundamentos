@@ -1,0 +1,78 @@
+#include <iostream>
+#include "funciones.h"
+#define longo 50
+
+using namespace std;
+
+int main()
+{
+    char opcion;
+    int n=6;
+    string nombre[longo]={"Arnold","Marioti","Luis","Amalia","Elias","Maximo"},aux2;
+    int targeta[longo]={1122,0057,0723,2455,3402,3222},rojo=6,aux;
+    bool arnold[longo]={0,1,1,0,0,1};
+    bool campana[longo]={0,0,0,1,1,1};
+    string elim;
+    float goldo;
+
+    goldo=opcion1(n,campana);
+
+
+
+do{
+
+
+    cout <<endl<< "Digite la opcion que desea"<<endl;
+    cout <<"Escriba a para el numero total de niños vacunados en esta campana.\n"<<endl;
+    cout <<"Escriba b para tener un informe en orden de los niños que se vacunaron en esta campana.\n"<<endl;
+    cout <<"Escriba c para la saber la cantidad de niños que no fueron vacunados en la campana anterior.\n"<<endl;
+    cout <<"Escriba d para saber el promedio de los niños vacunados en esta campana.\n"<<endl;
+    cout <<"Escriba e para obtener un listado de todos los niños que no han sido vacunados en total.\n"<<endl;
+    cout<<"Escriba + agregar otro nino"<<endl;
+    cin>>opcion;
+
+
+    switch(opcion){
+    case 'a':
+    cout<<"*********************************"<<endl;
+     cout<<"El total de niños vacunados en esta campana son:"<<opcion1(n,campana)<<endl;
+        cout<<"*********************************"<<endl;
+    break;
+
+    case 'b':
+    opcionb(nombre,targeta,n,campana);
+
+    break;
+
+
+    case 'c':
+
+    cout<< "La cantidad de niños que no se han vacunado en la campana  anterior son:"<<opcionc(n,arnold)<<endl;
+
+    break;
+
+    case 'd':
+    goldo=opcion1(n,campana);
+    cout<<"El porcentaje es:"<<opciond(n,goldo)<<"%"<<endl;
+    break;
+
+    case 'e':
+    opcione(n,campana,arnold,nombre,targeta);
+    break;
+
+    case '+':
+    Insertar(targeta,n,nombre,campana,goldo);
+    break;
+
+    case '-':
+    cout<<"Nombre de quien desea eliminar"<<endl;
+    cin>>elim;
+    Quitar(targeta,n,nombre,campana,goldo,elim);
+    break;
+
+    case 'x':
+    break;
+    }
+    }
+    while(opcion!='x');
+}

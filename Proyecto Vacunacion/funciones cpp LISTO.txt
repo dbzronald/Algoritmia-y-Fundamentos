@@ -1,0 +1,191 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+
+void nombres(int n, string nombre[], int targeta[], bool campana[]){
+    int i;
+    char op;
+    for(i=0;i<n;i++){
+        cout<<"Digite el nombre "<<i+1<< endl;
+        cin>>nombre[i];
+        cout<<"digite la targeta de codigo:"<<endl;
+        cin>>targeta[i];
+        cout<<"digite s si ha sido vacunado en esta campana o n si no:"<<endl;
+        cin>>op;
+
+
+
+        if(op=='s'){
+            campana[i]=true;
+
+
+
+        }
+        else {
+            campana[i]=false;
+        }
+
+
+    }
+
+
+}
+
+int opcion1(int n,bool campana[] )
+{   int goldo=0;
+    for(int i=0;i<n;i++)
+    {
+        if(campana[i]==1)
+        {
+            goldo++;
+        }
+    }
+    return goldo;
+}
+
+
+
+
+
+
+int opcionc (int n,bool arnold[]){
+    int i, rojo=0;
+    char op;
+    for (i=0; i<n; i++){
+
+        if(arnold[i]==0){
+            rojo++;
+
+
+        }
+    }
+    return rojo;
+}
+
+void opcionb (string nombre[], int targeta[], int n, bool campana[]){
+    int i, aux3=0,aux=0,j;
+    string aux2;
+
+
+    for(i=0; i<n; i++){
+        for(j=i+1; j<n; j++){
+            if(targeta[j] > targeta[i]){
+            aux=targeta[i];
+            targeta[i]=targeta[j];
+            targeta[j]=aux;
+            aux2=nombre[i];
+            nombre[i]=nombre[j];
+            nombre[j]=aux2;
+            aux3 = campana[i];
+            campana[i]=campana[j];
+            campana[j]= aux3;
+
+                }
+
+        }
+
+    if(targeta[i]!=0){cout <<nombre[i]<<"  ("<<targeta[i]<<")";
+    if(campana[i]==0){
+        cout<<" No vacunado"<<endl;
+    }
+    else {
+        cout <<" Vacunado"<<endl;
+    }
+    cout<<"*****************************\n"<<endl;
+}}}
+
+
+float opciond (int n, float goldo){
+
+    float porc;
+    porc=(goldo/n)*100;
+
+    return porc;
+
+
+}
+
+void opcione (int n, bool campana[], bool arnold[], string nombre[], int targeta[]){
+
+    int i, aux3=0,aux=0,aux4=0,j;
+    string aux2;
+
+    for(i=0; i<n; i++){
+        for(j=i+1; j<n; j++){
+            if(targeta[j] > targeta[i]){
+            aux=targeta[i];
+            targeta[i]=targeta[j];
+            targeta[j]=aux;
+            aux2=nombre[i];
+            nombre[i]=nombre[j];
+            nombre[j]=aux2;
+            aux3 = campana[i];
+            campana[i]=campana[j];
+            campana[j]= aux3;
+            aux4= arnold[i];
+            arnold[i]= arnold[j];
+            arnold[j]=aux4;
+
+            }
+
+        }
+    if(campana[i]==0 && arnold[i]==0){
+    cout <<nombre[i]<<"  ("<<targeta[i]<<")"<<endl;
+    cout<<"*****************************\n"<<endl;
+    }
+}
+
+}
+
+void Insertar(int targeta[], int &n, string nombre[], bool campana[], int cont)
+{
+     int i;
+    char op,opcion;
+    for(i=0;i<n+1;i++){
+            if(targeta[i]==0){
+        cout<<"Digite el nombre "<<i+1<< endl;
+        cin>>nombre[i];
+        cout<<"digite la targeta de codigo:"<<endl;
+        cin>>targeta[i];
+        cout<<"digite s si ha sido vacunado en esta campana o n si no:"<<endl;
+        cin>>op;
+        if(op=='s'){
+            campana[i]=true;
+            cont++;
+        }
+        else {
+            campana[i]=false;
+        }
+
+
+        cout<<"Otro nino? [s] [n]"<<endl;
+        cin>>opcion;
+        if (opcion == 's' && i == n){
+                n++;
+            }
+            else if (opcion == 'n'){
+                i = n;
+            }
+            }}
+
+
+    n++;
+}
+
+void Quitar(int targeta[],int n, string nombre[],bool campana[],int cont, string elim){
+    for(int i=0;i<n;i++){
+        if(nombre[i]==elim){
+            for(int j=i;j<n;j++){
+                targeta[j]=targeta[j+1];
+                nombre[j]=nombre[j+1];
+                campana[j]=campana[j+1];
+            }
+        }
+    }
+    cout<< elim <<" ha sido eliminado"<<endl;
+}
+
+
+
+
