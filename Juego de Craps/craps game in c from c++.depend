@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1456514761 source:c:\users\ronald\desktop\craps game in c from c++\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1456525652 source:c:\users\ronald\pictures\juego de craps\main.c
+	<stdio.h>
+	<stdlib.h>
+
