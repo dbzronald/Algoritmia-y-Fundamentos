@@ -1,0 +1,208 @@
+EMAIL DE PROFE : d.pages@ce.pucmm.edu.do
+
+  float ch1, ch2, ch3, d2, d3, d1, t1, t3, t2, c1, c3, c2, vb1, vb2, vb3,extv1, extv2, extv3, bateador1, bateador2, bateador3;
+
+    cout << " ******************************************************" << endl;
+    cout << "**                      BATEADOR #1                   **" << endl;
+    cout << "**                                                    **" << endl;
+    cout << " ******************************************************\n" << endl;
+
+    string nombre1, nombre2, nombre3, tercerbat, cuartobat;
+    cout << "Introduzca el nombre de Bateador1" << endl;
+    cin >> nombre1;
+
+    cout << "Introduzca Cantidad de hits" << endl;
+    cin >> ch1;
+
+    cout << "Introduzcas Cantidad de dobles" << endl;
+    cin >> d1;
+
+    cout << "Introduzcas Cantidad de triples" << endl;
+    cin >> t1;
+
+    cout << "Introduzcas Cantidad de cuadrangulares" << endl;
+    cin >> c1;
+
+    cout << "Introduzcas la Cantidad de veces al bate" << endl;
+    cin >> vb1;
+
+    extv1 = c1+d1+t1;
+
+    bateador1= ((ch1+d1+t1+c1)/vb1)*1000;
+    cout << "El promedio del Bateador es:" << endl;
+    cout << bateador1 << endl;
+
+    cout << "                                                           " << endl;
+    cout << "                                                           " << endl;
+
+    cout << " ******************************************************" << endl;
+    cout << "**                      BATEADOR #2                   **" << endl;
+    cout << "**                                                    **" << endl;
+    cout << " ******************************************************\n" << endl;
+
+    cout << "Introduzca el nombre de Bateador2" << endl;
+    cin >> nombre2;
+
+    cout << "Introduzca Cantidad de hits" << endl;
+    cin >> ch2;
+
+    cout << "Introduzcas Cantidad de dobles" << endl;
+    cin >> d2;
+
+    cout << "Introduzcas Cantidad de triples" << endl;
+    cin >> t2;
+
+    cout << "Introduzcas Cantidad de cuadrangulares" << endl;
+    cin >> c2;
+
+    cout << "Introduzcas la Cantidad de veces al bate" << endl;
+    cin >> vb2;
+
+    extv2 = c2+d2+t2;
+
+    bateador2= ((ch2+d2+t2+c2)/vb2)*1000;
+    cout << "El promedio del Bateador es:" << endl;
+    cout << bateador2 << endl;
+
+    cout << "                                                           " << endl;
+    cout << "                                                           " << endl;
+
+    cout << " ******************************************************" << endl;
+    cout << "**                      BATEADOR #3                   **" << endl;
+    cout << "**                                                    **" << endl;
+    cout << " ******************************************************\n" << endl;
+
+    cout << "Introduzca el nombre de Bateador3" << endl;
+    cin >> nombre3;
+
+    cout << "Introduzca Cantidad de hits" << endl;
+    cin >> ch3;
+
+    cout << "Introduzcas Cantidad de dobles" << endl;
+    cin >> d3;
+
+    cout << "Introduzcas Cantidad de triples" << endl;
+    cin >> t3;
+
+    cout << "Introduzcas Cantidad de cuadrangulares" << endl;
+    cin >> c3;
+
+    cout << "Introduzcas la Cantidad de veces al bate" << endl;
+    cin >> vb3;
+
+    extv3 = c3+d3+t3;
+
+    bateador3= ((ch3+d3+t3+c3)/vb3)*1000;
+    cout << "El promedio del Bateador es:" << endl;
+    cout << bateador3 << endl;
+
+    cout << "                                                           " << endl;
+    cout << "                                                           " << endl;
+
+    cout << " ******************************************************" << endl;
+    cout << "****               SELECCION DE PUESTOS              ****" << endl;
+    cout << "**              PARA LA PROXIMA TEMPORADA             **" << endl;
+    cout << " ******************************************************\n" << endl;
+
+    if (bateador1 > bateador2 && bateador1 > bateador3){
+        cout << "El tercer puesto sera:" << endl;
+        cout << nombre1 << endl;
+        tercerbat = nombre1;
+    }
+
+    else if (bateador2 > bateador1 && bateador2 > bateador3){
+        cout << "El tercer puesto sera:" << endl;
+        cout << nombre2 << endl;
+        tercerbat = nombre2;
+    }
+
+    else if(bateador3 > bateador1 && bateador3 > bateador2){
+        cout << "El tercer puesto sera:" << endl;
+        cout << nombre3 << endl;
+        tercerbat = nombre3;
+    }
+
+    else{
+
+        if(bateador1 == bateador2 && bateador2 == bateador3){
+        if (extv1 > extv2 && extv2 > extv3){
+            cout << "El tercer puesto sera:" << endl;
+            cout << nombre1 <<endl;
+
+        }
+        else if (extv2 > extv3 && extv3 > extv1){
+                cout << "El tercer puesto sera:" << endl;
+                cout << nombre2 << endl;
+
+        }
+        else {cout << "El tercer puesto sera:" << endl;
+                cout << nombre3 << endl;
+
+        }
+    }
+    else if (bateador1 == bateador2 > bateador3){
+            if (extv1 > extv2){
+                cout << "El tercer puesto sera:" << endl;
+                cout << nombre1 << endl;
+        }
+
+       else if (bateador2 == bateador3 > bateador1){
+                if (extv2 > extv1){
+            cout << nombre2 << endl;
+            }
+       }
+    }
+    else {cout << nombre3 << endl;
+    }
+
+
+    }
+
+
+    if (c1 >= c2 && c2 >= c3){
+        cout << "El cuarto puesto sera:" << endl;
+        cout << nombre1 << endl;
+        cuartobat = nombre1;
+    }
+
+    else if (c2 >= c1 && c1 >= c3){
+        cout << "El cuarto puesto sera:" << endl;
+        cout << nombre2 << endl;
+        cuartobat = nombre2;
+    }
+
+    else{
+        cout << "El cuarto puesto sera:" << endl;
+        cout << nombre3 << endl;
+        cuartobat = nombre3;
+    }
+
+    if  (cuartobat == nombre1 && tercerbat == nombre2){
+        cout << "El quinto puesto sera:" << endl;
+        cout << nombre3 << endl;
+    }
+
+    else if (cuartobat == nombre2 && tercerbat == nombre1){
+        cout << "El quinto puesto sera:" << endl;
+        cout << nombre3 << endl;
+}
+    else if (cuartobat == nombre3 && tercerbat == nombre1){
+        cout << "El quinto puesto sera:" << endl;
+        cout << nombre2 << endl;
+    }
+
+
+    else if (cuartobat == nombre1 && tercerbat == nombre3){
+        cout << "El quinto puesto sera:" << endl;
+        cout << nombre2 << endl;
+    }
+
+    else if (cuartobat == nombre2 && tercerbat == nombre3){
+        cout << "El quinto puesto sera:" << endl;
+        cout << nombre1 << endl;
+
+    }
+
+    else{cout << "El quinto puesto sera:" << endl;
+        cout << nombre1 << endl;
+    }
